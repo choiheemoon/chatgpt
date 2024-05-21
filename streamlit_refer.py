@@ -71,7 +71,7 @@ def main():
 
             with st.spinner("Thinking..."):
                 with get_openai_callback() as cb:
-                    result = chain({"query": query, "chat_history": st.session_state.chat_history})
+                    result = chain({"query": query})
                 response = result['answer']
                 source_documents = result.get('source_documents', [])
 
